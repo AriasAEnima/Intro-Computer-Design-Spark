@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package edu.escuelaing.arem.intro.structures;
+package edu.escuelaing.arep.introSpark.structures;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
@@ -128,7 +128,19 @@ public class LinkedListG<E> implements List<E>{
 
     @Override
     public E get(int index) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        int i=0;
+        E ans=null;
+        Iterator it=this.iterator();
+        while(it.hasNext() && i<=index){           
+            if (i==index){
+                ans=(E) it.next();
+            }else{
+                it.next();
+            }
+            i++;
+        }
+        
+        return ans;
     }
     
   
@@ -167,6 +179,20 @@ public class LinkedListG<E> implements List<E>{
     public List<E> subList(int fromIndex, int toIndex) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+    
+    @Override
+    public String toString(){
+        String ans = "";
+        Iterator it = this.iterator();
+        if(it.hasNext()){
+           ans+=it.next();
+        }        
+        while (it.hasNext()) {            
+            ans+=","+it.next();
+        }
+        return ans;
+    }
+    
     
     /**
      * Es una implementacion rapida de ListIterator

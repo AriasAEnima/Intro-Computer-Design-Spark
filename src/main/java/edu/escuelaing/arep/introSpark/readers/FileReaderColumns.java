@@ -3,19 +3,22 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package edu.escuelaing.arem.intro.readers;
-import edu.escuelaing.arem.intro.structures.LinkedListG;
+package edu.escuelaing.arep.introSpark.readers;
+import edu.escuelaing.arep.introSpark.structures.LinkedListG;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 /**
  *
  * @author J. Eduardo Arias
  */
-public class FileReaderColumns {   
+public class FileReaderColumns implements Reader{   
     private int ncolumns;
     private List<List<Double>> data;
     
@@ -29,6 +32,15 @@ public class FileReaderColumns {
         for (int i=1; i<=ncolumns;i++)
             data.add(new LinkedListG<>());      
     }  
+    
+    @Override
+    public void read(String pathfile){
+        try {
+            read(Paths.get(pathfile));
+        } catch (Exception ex) {
+            Logger.getLogger(FileReaderColumns.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
     
     /**
      * Lee y guarda en "data" los datos de las columnas.
@@ -65,6 +77,7 @@ public class FileReaderColumns {
     /**
      * @return cada lista contenida es una columna.
      */
+    @Override
     public List<List<Double>> getData() {
         return data;
     }

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package edu.escuelaing.arem.intro.structures;
+package edu.escuelaing.arep.introSpark.structures;
 
 /**
  *

@@ -1,16 +1,17 @@
-<package edu.escuelaing.arem.intro;
+package edu.escuelaing.arem.introSpark;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-import static edu.escuelaing.arem.intro.Calculator.DESVIATION;
-import static edu.escuelaing.arem.intro.Calculator.MEAN;
-import edu.escuelaing.arem.intro.structures.LinkedListG;
+import edu.escuelaing.arep.introSpark.Calculator;
+import static edu.escuelaing.arep.introSpark.Calculator.MEAN;
+import edu.escuelaing.arep.introSpark.structures.LinkedListG;
 import java.util.List;
 import org.junit.*;
 import static org.junit.Assert.*;
+import static edu.escuelaing.arep.introSpark.Calculator.DEVIATION;
 /**
  *
  * @author J. Eduardo Arias
@@ -53,7 +54,7 @@ public class CalculadoraTest {
         lista.add(624.0);
         lista.add(1503.0);
         Double ans1m=Calculator.operateList(lista, MEAN);
-        Double ans2m=Calculator.operateList(lista, DESVIATION);
+        Double ans2m=Calculator.operateList(lista, DEVIATION);
         assertEquals(550.6, ans1m,0.0001);
         assertEquals(572.03, ans2m,0.005);
     }
@@ -72,7 +73,7 @@ public class CalculadoraTest {
         lista.add(38.8);
         lista.add(138.2);
         Double ans1m=Calculator.operateList(lista, MEAN);
-        Double ans2m=Calculator.operateList(lista, DESVIATION);
+        Double ans2m=Calculator.operateList(lista, DEVIATION);
         assertEquals(60.32, ans1m,0.0001);
         assertEquals(62.26, ans2m,0.005);
     }
@@ -91,7 +92,7 @@ public class CalculadoraTest {
         lista.add(788.0);
         lista.add(1601.0);
         Double ans1m=Calculator.operateList(lista, MEAN);
-        Double ans2m=Calculator.operateList(lista, DESVIATION);
+        Double ans2m=Calculator.operateList(lista, DEVIATION);
         assertEquals(638.9, ans1m,0.0001);
         assertEquals(625.633981, ans2m,0.00001);
     }

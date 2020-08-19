@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package edu.escuelaing.arem.intro;
+package edu.escuelaing.arep.introSpark;
 
 import java.util.List;
 
@@ -21,7 +21,7 @@ public class Calculator {
             return ans/a.size();
         };
         
-    public static final Calculator.DoubleMath DESVIATION=(a)->{
+    public static final Calculator.DoubleMath DEVIATION=(a)->{
             Double m=Calculator.operateList(a, MEAN);
             Double ans=0.0;
             for(Double n:a){
