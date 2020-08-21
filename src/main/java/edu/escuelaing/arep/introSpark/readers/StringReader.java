@@ -32,7 +32,11 @@ public class StringReader implements Reader{
         this.separator = separator;
     }   
     
-
+    /**
+     * Lee apartir de un String separado por espacios va guardando los numeros
+     * encontrados en la variable data
+     * @param source 
+     */
     @Override
     public void read(String source) {
         String[] separados=source.split(separator);       
