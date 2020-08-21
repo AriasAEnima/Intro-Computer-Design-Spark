@@ -11,6 +11,14 @@ Esta aplicación web permite calcular la media y desviación estándar dado unos
 # Documento:
 ## [(Click Aqui)](https://github.com/AriasAEnima/Intro-Computer-Design-Spark/blob/master/informe.pdf)
 
+# CircleCI
+[![CircleCI](https://circleci.com/gh/AriasAEnima/Intro-Computer-Design-Spark.svg?style=svg)](https://circleci.com/gh/AriasAEnima/Intro-Computer-Design-Spark)
+
+# Heroku
+
+## https://intro-computer-design-spark.herokuapp.com/
+
+
 ### Prerrequisitos
 
 Java JDK 1.8, Maven , Git, Spark (Dependencia)
