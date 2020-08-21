@@ -18,6 +18,12 @@ Esta aplicación web permite calcular la media y desviación estándar dado unos
 
 ## https://intro-computer-design-spark.herokuapp.com/
 
+## Documentación:
+
+Se encuentra en la carpeta y se puede generar
+```
+> cd src/main/resources/javadoc
+```
 
 ### Prerrequisitos
 
@@ -97,12 +103,7 @@ Estas se ejecutaran al hacer mvn package
  Column 2 | 60.32  | 62.26 | 60.32 | 62.2558306060 ...
 
 
-## Documentación:
 
-Se encuentra en la carpeta y se puede generar
-```
-> cd src/resources/javadoc
-```
 
 
 
