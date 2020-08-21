@@ -1,17 +1,19 @@
-# Introduccion a Spark y Diseño de Sistemas
+# Introducción a Spark y Diseño de Sistemas
 
-falta
+Esta aplicación web permite calcular la media y desviación estándar dado unos datos.
+
+![web](media/web.PNG)
 
 ## Autor
 
 * **J. Eduardo Arias Barrera** - [AriasAEnima](https://github.com/AriasAEnima)
 
 # Documento:
-## [(Click Aqui)](https://github.com/AriasAEnima/Intro-MVN-GIT-Desviacion-Promedio/blob/master/informe.pdf)
+## [(Click Aqui)](https://github.com/AriasAEnima/Intro-Computer-Design-Spark/blob/master/informe.pdf)
 
 ### Prerrequisitos
 
-Java JDK 1.8, Maven y Git.
+Java JDK 1.8, Maven , Git, Spark (Dependencia)
 
 * [JAVA JDK 8](http://www.oracle.com/technetwork/java/javase/overview/index.html) - Version de Java
 * [Maven](https://maven.apache.org/) - Maven
@@ -22,7 +24,7 @@ Java JDK 1.8, Maven y Git.
 
 Se debe ejecutar en la carpeta que queremos que esté
 ```
-> git clone https://github.com/AriasAEnima/Intro-MVN-GIT-Desviacion-Promedio.git
+> git clone https://github.com/AriasAEnima/Intro-Computer-Design-Spark.git
 ```
 ### Instalación
 
@@ -34,21 +36,42 @@ Primero ejecutamos maven en la carpeta raíz, esto compilara el aplicativo
 
 
 ## Ejecución:
+Podremos usarlo en local directamente con Spark con el siguiente comando
+En linux:
 
-Para correr la calculadora con los datos deseados , en este caso tomara dos columnas de datos puestas en un archivo txt que está en el directorio raíz:
+```
+> java $JAVA_OPTS -cp target/classes:target/dependency/* edu.escuelaing.arep.introSpark.CalculatorApp
+
+```
+En windows:
+```
+> java -cp target/classes:target/dependency/* edu.escuelaing.arep.introSpark.CalculatorApp
+
+```
+O con heroku CLI si se tiene instalado con
+```
+> heroku local web
 ```
 
->java -cp target/Intro-Mvn-Git-Desv-Prom-1.0-SNAPSHOT.jar
-edu.escuelaing.arem.intro.CalculatorApp prueba.txt
+En el caso de usar spark estará en el puerto :
+
 ```
+localhost:4567
+```
+
+En el caso de usar heroku estará en el puerto:
+
+```
+localhost:5000
+```
+
+Y solo tendremos que colocar los números separados por espacios y . para el decimal y presionar en "Calcular"
+
 
 
 ## Diseño Utilizado
 
 ![Modelo](media/modelo.PNG)
-
-
-
 
 ## Pruebas por JUnit:
 
@@ -58,6 +81,7 @@ Estas se ejecutaran al hacer mvn package
 
 ![test](media/test.PNG)
 
+![test](media/test2.PNG)
 
  Test | Expected Mean | Expected Std. Dev. | Ans Mean | Ans D Std. Dev.
  ---|----|----|----|---

@@ -35,13 +35,13 @@ public class StringReader implements Reader{
 
     @Override
     public void read(String source) {
-        String[] separados=source.split(separator);
+        String[] separados=source.split(separator);       
         for (String s:separados){
             Double value;
             try {
-                value = Double.parseDouble(s);
+                value = Double.parseDouble(s);         
                 data.add(value);
-            } catch (NumberFormatException e) {
+            } catch (Exception e) {
                 System.out.println("Ignorado: "+s);
             }
                    
@@ -49,12 +49,12 @@ public class StringReader implements Reader{
     }
 
     @Override
-    public List<List<Double>> getData() {
+    public List<List<Double>> getData() {       
         return new ArrayList<List<Double>>(){
-            {
-                add(data);
-            }
-        };
+          {
+              add(data);
+          }
+      };       
     }
     
 }

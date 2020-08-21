@@ -16,7 +16,13 @@
                     return response.json();
                 })
                 .then(function (myJson) {
-                    document.querySelector("#resultado").innerHTML ="Mean: "+ myJson.mean+" ; Deviation:   "+myJson.deviation;
+                    if(myJson.mean!=null){                        
+                        document.querySelector("#resultado").innerHTML ="Mean: "+ myJson.mean+" ; Deviation:   "+myJson.deviation;
+
+                    }else{                        
+                        document.querySelector("#resultado").innerHTML = "Datos no validos";
+
+                    }
                 })
                 .catch(function (error) {
                     console.log("Error: " + error);

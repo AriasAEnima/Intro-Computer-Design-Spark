@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package edu.escuelaing.arep.introSpark;
+package edu.escuelaing.arep.introSpark.calculator;
 
+import static edu.escuelaing.arep.introSpark.calculator.CalculatorException.LISTA_VACIA;
 import java.util.List;
 
 /**
@@ -14,6 +15,9 @@ import java.util.List;
 public class Calculator {
     
     public static final Calculator.DoubleMath MEAN=(a)->{
+            if (a.size()<=1){
+                throw new  CalculatorException(LISTA_VACIA);
+            }
             Double ans=0.0;
             for(Double n:a){
                 ans+=n;
@@ -22,6 +26,9 @@ public class Calculator {
         };
         
     public static final Calculator.DoubleMath DEVIATION=(a)->{
+            if (a.size()<=1){
+                throw new  CalculatorException(LISTA_VACIA);
+            }
             Double m=Calculator.operateList(a, MEAN);
             Double ans=0.0;
             for(Double n:a){
@@ -38,7 +45,7 @@ public class Calculator {
      * Permite hacer operaciones sobre una lista de double's.
      */
     public interface DoubleMath {
-        double operation(List<Double> ld);
+        double operation(List<Double> ld) throws CalculatorException;
     }
 
     public  static int operateBinary(int a, int b, IntegerMath op) {
@@ -51,7 +58,7 @@ public class Calculator {
      * @param op la opracion
      * @return resultado de la operacion
      */
-    public static double operateList(List<Double> a, DoubleMath op) {
+    public static double operateList(List<Double> a, DoubleMath op) throws CalculatorException {
         return op.operation(a);
     }
   
